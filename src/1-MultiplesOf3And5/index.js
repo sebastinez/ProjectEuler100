@@ -5,10 +5,9 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 */
 
 module.exports.multiplesOf3And5 = number => {
-  const numArray = [];
+  let sum = 0;
   for (let i = 0; i < number; i++) {
-    if (i % 3 === 0) numArray.push(i);
-    else if (i % 5 === 0) numArray.push(i);
+    if (i % 3 === 0 || i % 5 === 0) sum += i;
   }
-  return numArray.reduce((acc, curr) => (acc += curr));
+  return sum;
 };
